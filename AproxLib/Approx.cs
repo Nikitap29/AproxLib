@@ -15,11 +15,11 @@ namespace AproxLib
         /// <param name="x">Переменные Х</param>
         /// <param name="y">Переменные Y</param>
         /// <returns>Возвращает массив коэффициентов</returns>
-        public string CalcCoefs2(double[] x, double[] y)
+        public int CalcCoefs2(double[] x, double[] y)
         {  
             var X = new Matrix(3, 1); //массив коэффициентов
             if (x.Length != y.Length) //если размер Х не равен размеру Y
-                return "Ошибка размерности массивов";
+                return -1;
             var n = x.Length; //размерность массивов
             var A = new Matrix(3, 3); //матрица коэффициентов
             var B = new Matrix(3, 1); //вектор свободных коэффициентов
@@ -51,7 +51,7 @@ namespace AproxLib
             var invA = A.Inverse(); //находим обратную матрицу
             X = invA * B; //результат вычисляется как произведение
             coefs = new double[] { X.array[0, 0], X.array[1, 0], X.array[2, 0] }; //формируем результат
-            return "Коэффициенты успешно рассчитаны";
+            return 1;
         }
 
         /// <summary>
