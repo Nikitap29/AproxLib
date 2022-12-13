@@ -15,7 +15,7 @@ namespace AproxLib
         /// <param name="x">Переменные Х</param>
         /// <param name="y">Переменные Y</param>
         /// <returns>Возвращает массив коэффициентов</returns>
-        public int CalcCoefs2(double[] x, double[] y)
+        public int CalcCoefs(double[] x, double[] y)
         {  
             var X = new Matrix(3, 1); //массив коэффициентов
             if (x.Length != y.Length) //если размер Х не равен размеру Y
